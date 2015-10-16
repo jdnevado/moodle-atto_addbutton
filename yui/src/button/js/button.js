@@ -35,15 +35,22 @@
 Y.namespace('M.atto_addbutton').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
      initializer: function() {
             this.addButton({
-                callback: null,
-                icon: null
+                callback: this._execStyle,
+                icon: 'e/emoticon'
             });
-        }
+        },
+
+    _execStyle: function() {
+        // Apply style.
+        document.execCommand(this.get('style'), false, null);
+        // Mark the textarea as updated.
+        this.markUpdated();
+    }
 },
-    // params on lib.php. Mandatory (this.get('xxx')).
+    // params on lib.php. Mandatory (this.get('style')).
     {
     ATTRS: {
-        xxx: {
+        style: {
             value: {}
         }
     }
