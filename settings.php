@@ -1,3 +1,4 @@
+<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -13,39 +14,22 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/*
- * Atto basicButton example.
+/**
+ * Settings that allow to fix a javacript style to apply with addbutton atto pluigin.
  *
  * @package    atto_addbutton
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/**
- * @module moodle-atto_addbutton-button
- */
+defined('MOODLE_INTERNAL') || die();
 
-/**
- * Atto
- *
- * @namespace M.atto_addbutton
- * @class button
- * @extends M.editor_atto.EditorPlugin
- */
+$ADMIN->add('editoratto', new admin_category('atto_addbutton', new lang_string('pluginname', 'atto_addbutton')));
 
-Y.namespace('M.atto_addbutton').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
-     initializer: function() {
-            this.addButton({
-                callback: null,
-                icon: null
-            });
-        }
-},
-    // params on lib.php. Mandatory (this.get('xxx')).
-    {
-    ATTRS: {
-        xxx: {
-            value: {}
-        }
-    }
-
-});
+$settings = new admin_settingpage('atto_addbutton_settings', new lang_string('settings', 'atto_addbutton'));
+if ($ADMIN->fulltree) {
+    $setting = new admin_setting_configtext('atto_addbutton/style',
+                                                get_string('style', 'atto_addbutton'),
+                                                get_string('style_description', 'atto_addbutton'),
+                                                'bold');
+    $settings->add($setting);
+}

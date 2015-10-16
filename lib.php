@@ -1,3 +1,4 @@
+<?php
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -13,39 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/*
- * Atto basicButton example.
+/**
+ * Atto text editor example lib file
  *
  * @package    atto_addbutton
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/**
- * @module moodle-atto_addbutton-button
- */
+defined('MOODLE_INTERNAL') || die();
 
-/**
- * Atto
- *
- * @namespace M.atto_addbutton
- * @class button
- * @extends M.editor_atto.EditorPlugin
- */
-
-Y.namespace('M.atto_addbutton').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
-     initializer: function() {
-            this.addButton({
-                callback: null,
-                icon: null
-            });
-        }
-},
-    // params on lib.php. Mandatory (this.get('xxx')).
-    {
-    ATTRS: {
-        xxx: {
-            value: {}
-        }
-    }
-
-});
+function atto_addbutton_params_for_js($elementid, $options, $fpoptions) {
+}

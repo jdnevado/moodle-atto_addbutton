@@ -22,3 +22,6 @@
  */
 
 $string['pluginname'] = 'addButton Example';
+$string['settings'] = 'addButton Settings';
+$string['style'] = 'Name';
+$string['style_description'] = '';
