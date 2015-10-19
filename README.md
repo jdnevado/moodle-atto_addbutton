@@ -1,5 +1,5 @@
-# basicButton Atto plugin example
-This example plugin contains the minimal structure for an Atto plugin using addButton method.
+# addButton Atto plugin example
+This example plugin contains a example dialogue using addButton method.
 # Useful links
  * Shifter doc: <https://docs.moodle.org/dev/YUI/Shifter>
  * YUI doc: <https://docs.moodle.org/dev/YUI/Modules>

@@ -15,12 +15,20 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Atto addbutton plugin lang file.
+ * Atto text editor integration version file.
  *
  * @package    atto_addbutton
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'addButton Example';
-$string['enterstyle'] = 'Enter style';
-$string['setstyle'] = 'Set style';
+defined('MOODLE_INTERNAL') || die();
+
+/**
+ * Initialise this plugin
+ * @param string $elementid
+ */
+function atto_addbutton_strings_for_js() {
+    global $PAGE;
+
+    $PAGE->requires->strings_for_js(array('enterstyle', 'setstyle'), 'atto_addbutton');
+}
