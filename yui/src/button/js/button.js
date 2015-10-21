@@ -36,7 +36,7 @@ var COMPONENTNAME = 'atto_addbutton',
     TEMPLATE = '' +
             '<form class="atto_form">' +
                 '<label>{{get_string "enterstyle" component}}</label>' +
-                '<input class="atto_addbutton_stylentry" type="text" id="{{elementid}}_atto_link_urlentry" size="32"/><br/>' +
+                '<input class="atto_addbutton_stylentry" type="text" id="{{elementid}}_atto_link_stylentry" size="32"/><br/>' +
                 '<div class="mdl-align">' +
                     '<br/>' +
                     '<button type="submit" class="submit">{{get_string "setstyle" component}}</button>' +
@@ -85,7 +85,7 @@ Y.namespace('M.atto_addbutton').Button = Y.Base.create('button', Y.M.editor_atto
         this.editor.focus();
         host.setSelection(this._currentSelection);
 
-        var style = this._content.one('.style').get('value');
+        var style = this._content.one('.atto_addbutton_stylentry').get('value');
         document.execCommand(style, false, null);
 
         //document.execCommand(style, false, null);
