@@ -24,4 +24,5 @@
 defined('MOODLE_INTERNAL') || die();
 
 function atto_addbutton_params_for_js($elementid, $options, $fpoptions) {
+  return array('style' => 'hola');
 }
